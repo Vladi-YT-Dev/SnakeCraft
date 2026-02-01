@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Snake Craft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Global Pixel-Perfect Settings */
+    * {
+      font-family: 'Press Start 2P', cursive !important;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000;
+      /* Disable font smoothing for crisp pixels */
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: none;
+      font-smooth: never;
+      text-rendering: optimizeSpeed;
+    }
+
+    canvas {
+      image-rendering: pixelated;
+      touch-action: none;
+    }
+
+    /* Minecraft Slider Styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+
+    input[type=range]:focus {
+      outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background: #1f2937;
+      border: 2px solid #374151;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      height: 20px;
+      width: 20px;
+      background: #eab308;
+      border: 3px solid #854d0e;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -8px;
+      border-radius: 0;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.4);
+    }
+
+    /* Custom Animations */
+    @keyframes minecraft-float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-minecraft-float {
+      animation: minecraft-float 3s ease-in-out infinite;
+    }
+
+    @keyframes slide-up-in {
+      0% { transform: translateY(100vh); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-up {
+      animation: slide-up-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Prevent text selection to keep game feel */
+    .select-none {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+  </style>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="./assets/index-sh55MHuf.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
